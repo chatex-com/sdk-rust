@@ -1,0 +1,30 @@
+[package]
+name = "chatex-sdk-rust"
+version = "0.1.0"
+authors = ["Konstantin Senkevich <konstsen@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[workspace]
+members = [
+    "./examples/basic_info",
+]
+
+[dependencies]
+serde = { version = "1.*", features = ["derive"] }
+http = { version = "0.*" }
+hyper = { version = "0.*", features = ["http1", "http2"]}
+hyper-tls = { version = "0.*" }
+serde_json = { version = "1.*" }
+url = { version = "2.*" }
+isocountry = { version = "0.3.*" }
+iso_currency = { version = "0.4.*" }
+isolanguage-1 = { version = "0.2.*", features = ["serde"] }
+chrono = { version = "0.4.*" }
+log = { version = "0.4.*" }
+futures = { version = "0.*" }
+
+[dev-dependencies]
+tokio-test = { version = "*" }
+httpmock = { version = "0.*" }
